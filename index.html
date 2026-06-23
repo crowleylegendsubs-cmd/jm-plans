@@ -5,19 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="LS DM Plans">
+<meta name="apple-mobile-web-app-title" content="JM Plans">
 <meta name="theme-color" content="#1A3C5E">
-<title>Legend Subs District Manager Plans</title>
+<title>JM Weekly Plans</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#F2F2F7;color:#1A1A1A;overscroll-behavior:none}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F2F2F7;color:#1A1A1A;overscroll-behavior:none}
 .topbar{background:#1A3C5E;padding:env(safe-area-inset-top,44px) 16px 0;position:sticky;top:0;z-index:100}
 .topbar-inner{padding:12px 0 0}
 .topbar-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
-.topbar h1{font-size:17px;font-weight:700;color:white;letter-spacing:-0.3px}
-.topbar .sub{font-size:11px;color:rgba(255,255,255,0.55);margin-top:1px}
+.topbar h1{font-size:18px;font-weight:600;color:white;letter-spacing:-0.3px}
 .week-label{font-size:11px;color:rgba(255,255,255,0.6);margin-top:1px}
-.refresh-btn{background:rgba(255,255,255,0.18);border:none;border-radius:16px;color:white;font-size:12px;font-weight:500;padding:6px 12px;cursor:pointer;font-family:inherit}
+.refresh-btn{background:rgba(255,255,255,0.18);border:none;border-radius:16px;color:white;font-size:12px;font-weight:500;padding:6px 12px;cursor:pointer;display:flex;align-items:center;gap:5px;font-family:inherit}
 .tabs{display:flex}
 .tab{flex:1;text-align:center;padding:9px 4px 8px;font-size:13px;font-weight:500;color:rgba(255,255,255,0.5);cursor:pointer;border-bottom:2px solid transparent;transition:all 0.15s}
 .tab.active{color:white;border-bottom-color:white}
@@ -44,63 +43,130 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
 .day-name{font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#888;margin-bottom:3px}
 .day-stores{font-size:13px;font-weight:600;color:#1A1A1A;margin-bottom:3px}
 .day-focus{font-size:13px;color:#555;line-height:1.5}
-.day-focus.empty{color:#aaa;font-style:italic}
-.row-body.empty{color:#aaa;font-style:italic}
 .notes-box{padding:11px 14px;background:#F9F9FB;border-top:0.5px solid #E5E5EA;font-size:13px;color:#555;line-height:1.6;white-space:pre-wrap}
+.notes-box strong{color:#1A1A1A;font-weight:600}
 .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px 12px}
 .stat{background:#F2F2F7;border-radius:10px;padding:10px 12px}
 .stat-label{font-size:11px;color:#888;margin-bottom:3px}
 .stat-val{font-size:22px;font-weight:600;color:#1A1A1A}
+.alert{background:#FFF9C4;border:0.5px solid #EDD14A;border-radius:12px;padding:10px 13px;margin-bottom:10px;font-size:13px;color:#7D3C00;line-height:1.5;display:flex;gap:9px}
 .issue-row{display:flex;gap:10px;padding:10px 14px;border-top:0.5px solid #E5E5EA;align-items:flex-start}
 .issue-store{font-size:12px;font-weight:700;color:#1A1A1A;min-width:52px;padding-top:1px}
 .issue-text{font-size:13px;color:#555;line-height:1.4;flex:1}
-.issue-text.empty{color:#aaa;font-style:italic}
 .hidden{display:none!important}
-.updated-bar{background:#E8F5E9;border-radius:10px;padding:7px 12px;margin-bottom:10px;font-size:11px;color:#2E7D32;text-align:center;font-weight:500}
 .toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:#1A3C5E;color:white;font-size:13px;font-weight:500;padding:10px 18px;border-radius:20px;z-index:999;opacity:0;transition:opacity 0.3s;pointer-events:none;white-space:nowrap}
 .toast.show{opacity:1}
+.updated-bar{background:#E8F5E9;border-radius:10px;padding:7px 12px;margin-bottom:10px;font-size:11px;color:#2E7D32;text-align:center;font-weight:500}
 </style>
 </head>
 <body>
-<div class="topbar"><div class="topbar-inner">
-<div class="topbar-row">
-<div><h1>Legend Subs DM Plans</h1><div class="week-label">Week of June 22 – June 28, 2026</div></div>
-<button class="refresh-btn" onclick="location.reload()">Refresh</button>
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-row">
+      <div>
+        <h1>Jersey Mike's Plans</h1>
+        <div class="week-label">Week of June 22 – June 28, 2026</div>
+      </div>
+      <button class="refresh-btn" onclick="location.reload()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+        Refresh
+      </button>
+    </div>
+    <div class="tabs">
+      <div class="tab active" onclick="switchTab('summary',this)">Summary</div>
+      <div class="tab" onclick="switchTab('north',this)">North</div>
+      <div class="tab" onclick="switchTab('south',this)">South</div>
+      <div class="tab" onclick="switchTab('issues',this)">Issues</div>
+    </div>
+  </div>
 </div>
-<div class="tabs">
-<div class="tab active" onclick="switchTab('summary',this)">Summary</div>
-<div class="tab" onclick="switchTab('north',this)">North</div>
-<div class="tab" onclick="switchTab('south',this)">South</div>
-<div class="tab" onclick="switchTab('issues',this)">Issues</div>
-</div></div></div>
 <div class="content">
-<div class="updated-bar">Last updated Jun 23, 3:12 PM from Sunday emails</div>
-<div id="tab-summary">
-<div class="stat-grid"><div class="stat"><div class="stat-label">North stores</div><div class="stat-val">4</div></div><div class="stat"><div class="stat-label">South stores</div><div class="stat-val">4</div></div><div class="stat"><div class="stat-label">District managers</div><div class="stat-val">2</div></div><div class="stat"><div class="stat-label">Open issues</div><div class="stat-val">0</div></div></div>
-<div class="card"><div class="card-header north"><div class="card-header-row"><div><div class="sub">North market</div><h2>Jacob Lunger's week</h2></div><div class="dm-chip">DM</div></div></div><div class="row"><div class="row-body empty">Email not yet received this week.</div></div></div>
-<div class="card"><div class="card-header south"><div class="card-header-row"><div><div class="sub">South market</div><h2>Adam Stanneck's week</h2></div><div class="dm-chip">DM</div></div></div><div class="row"><div class="row-body empty">Email not yet received this week.</div></div></div>
-</div>
-<div id="tab-north" class="hidden">
-<div class="card"><div class="card-header north"><div class="card-header-row"><div><h2>Jacob Lunger — North</h2><div class="sub">(908) 319-9864</div></div></div></div><div class="day-row"><div class="day-focus empty">Schedule not yet received this week.</div></div></div>
-<div class="card"><div class="card-header north"><h2>Weekly focus</h2></div><div class="notes-box"></div></div>
-<div class="card"><div class="card-header north"><h2>Notes</h2></div><div class="notes-box"></div></div>
-</div>
-<div id="tab-south" class="hidden">
-<div class="card"><div class="card-header south"><div class="card-header-row"><div><h2>Adam Stanneck — South</h2><div class="sub">(201) 874-4617</div></div></div></div><div class="day-row"><div class="day-focus empty">Schedule not yet received this week.</div></div></div>
-<div class="card"><div class="card-header south"><h2>Weekly focus</h2></div><div class="notes-box"></div></div>
-<div class="card"><div class="card-header south"><h2>Notes & reminders</h2></div><div class="notes-box"></div></div>
-</div>
-<div id="tab-issues" class="hidden">
-<div class="card"><div class="card-header issues"><h2>Top store issues this week</h2></div><div class="issue-row"><div class="issue-text empty">No issues logged.</div></div><div class="issue-row"><div class="issue-text empty">No issues logged.</div></div></div>
-</div>
+  <div class="updated-bar">Auto-updated Jun 23, 3:12 PM from Sunday emails</div>
+
+  <!-- SUMMARY -->
+  <div id="tab-summary">
+    <div class="stat-grid">
+      <div class="stat"><div class="stat-label">North stores</div><div class="stat-val">4</div></div>
+      <div class="stat"><div class="stat-label">South stores</div><div class="stat-val">4</div></div>
+      <div class="stat"><div class="stat-label">Active MITs</div><div class="stat-val">3+</div></div>
+      <div class="stat"><div class="stat-label">Open issues</div><div class="stat-val">7</div></div>
+    </div>
+    <div class="card">
+      <div class="card-header north">
+        <div class="card-header-row">
+          <div><div class="sub">North market</div><h2>Jacob Lunger's week</h2></div>
+          <div class="dm-chip">DM</div>
+        </div>
+      </div>
+      <div class="row"><div class="row-body" style="color:#888;font-style:italic">Email not yet received this week.</div></div>
+    </div>
+    <div class="card">
+      <div class="card-header south">
+        <div class="card-header-row">
+          <div><div class="sub">South market</div><h2>Adam Stanneck's week</h2></div>
+          <div class="dm-chip">DM</div>
+        </div>
+      </div>
+      <div class="row"><div class="row-body" style="color:#888;font-style:italic">Email not yet received this week.</div></div>
+    </div>
+  </div>
+
+  <!-- NORTH -->
+  <div id="tab-north" class="hidden">
+    <div class="card">
+      <div class="card-header north">
+        <div class="card-header-row">
+          <div><h2>Jacob Lunger — North</h2><div class="sub">(908) 319-9864</div></div>
+        </div>
+      </div>
+      <div class="day-row"><div class="day-focus" style="color:#888;font-style:italic">Schedule not yet parsed — check the raw notes tab.</div></div>
+    </div>
+    <div class="card">
+      <div class="card-header north"><h2>Jake's big picture</h2></div>
+      <div class="notes-box"></div>
+    </div>
+    <div class="card">
+      <div class="card-header north"><h2>Jake's notes</h2></div>
+      <div class="notes-box"></div>
+    </div>
+  </div>
+
+  <!-- SOUTH -->
+  <div id="tab-south" class="hidden">
+    <div class="card">
+      <div class="card-header south">
+        <div class="card-header-row">
+          <div><h2>Adam Stanneck — South</h2><div class="sub">(201) 874-4617</div></div>
+        </div>
+      </div>
+      <div class="day-row"><div class="day-focus" style="color:#888;font-style:italic">Schedule not yet parsed — check the raw notes tab.</div></div>
+    </div>
+    <div class="card">
+      <div class="card-header south"><h2>Adam's weekly focus</h2></div>
+      <div class="notes-box"></div>
+    </div>
+    <div class="card">
+      <div class="card-header south"><h2>Adam's notes & reminders</h2></div>
+      <div class="notes-box"></div>
+    </div>
+  </div>
+
+  <!-- ISSUES -->
+  <div id="tab-issues" class="hidden">
+    <div class="card">
+      <div class="card-header issues"><h2>Top store issues this week</h2></div>
+      
+      
+    </div>
+  </div>
 </div>
 <div class="toast" id="toast"></div>
 <script>
 function switchTab(name,el){
-  document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
-  el.classList.add("active");
-  ["summary","north","south","issues"].forEach(t=>{
-    document.getElementById("tab-"+t).classList.toggle("hidden",t!==name);
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  ['summary','north','south','issues'].forEach(t=>{
+    document.getElementById('tab-'+t).classList.toggle('hidden',t!==name);
   });
 }
 </script>
